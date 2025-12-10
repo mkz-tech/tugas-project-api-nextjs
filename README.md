@@ -105,11 +105,11 @@ Install dependency:
 		
 ## Middleware Authentication + Authorization
 - Middleware menangani:
-	- Route						        Hak Akses
-	- `/api/auth/*`					  Public
-	- `/api/users/*`				  Admin only
-	- `/api/students/*`			  Hanya user login (Admin/User)
-	- `DELETE /students/*`		Admin Only
+	- Route	-x- Hak Akses
+	- `/api/auth/*`				- Public
+	- `/api/users/*`			- Admin only
+	- `/api/students/*`			- Hanya user login (Admin/User)
+	- `DELETE /students/*`		- Admin Only
 - Middleware juga menambahkan header otomatis:
 	- x-user-id
 	- x-user-email
