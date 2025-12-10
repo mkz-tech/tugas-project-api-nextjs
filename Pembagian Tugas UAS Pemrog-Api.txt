@@ -1,0 +1,75 @@
+PEMBAGIAN TUGAS UAS PEMROG-API
+(mengikuti struktur UAS: Database, Auth, Middleware, CRUD, Testing, Dokumentasi)
+
+##Anggota 1 – Setup Database & Prisma (Backend Fundation Expert)
+Tugas:
+- Membuat database PostgreSQL & koneksi.
+- Membuat schema.prisma (tabel Users + Students/Items).
+- Menjalankan prisma migrate.
+- Setup folder project Next.js + struktur API.
+- Membuat file .env.example.
+- Menulis README bagian setup.
+
+Output:
+- schema.prisma
+- Migrasi database
+- Dokumentasi setup di README
+
+## Anggota 2 – Authentication (Register + Login + JWT)
+Tugas:
+- Membuat endpoint:
+	POST /api/auth/register
+	POST /api/auth/login
+- Implementasi:
+	bcrypt hashing
+	bcrypt compare
+	generate JWT (payload: id, email, role)
+- Mengembalikan response format sesuai UAS: success, message, data
+- Sertakan validasi input (Zod).
+
+Output:
+- File app/api/auth/register/route.js
+- File app/api/auth/login/route.js
+- Validasi auth
+- Dokumentasi alur login/register
+
+## Anggota 3 – Middleware + Authorization (Role-based Security Layer)
+Tugas:
+- Membuat middleware.js
+- Memastikan:
+	Route /api/auth/* → Public
+	Route /api/users/* → Admin only
+	Route /api/students/* → User login wajib (Admin juga boleh)
+- Meng-inject header:
+	x-user-id
+	x-user-email
+	x-user-role
+- Menangani error:
+	401 Unauthorized
+	403 Forbidden
+	
+Output:
+- File lengkap middleware.js
+- Dokumentasi alur keamanan
+
+## Anggota 4 – CRUD Students + Testing + Laporan (Termasuk Kamu, Bro)
+Tugas:
+- Membuat endpoint:
+	GET /students
+	GET /students/:id
+	POST /students
+	PATCH/PUT /students/:id
+	DELETE /students/:id (Admin Only)
+- Validasi input menggunakan Zod
+- Testing semua endpoint menggunakan Postman:
+	Register
+	Login
+	Protected route
+	CRUD
+	DELETE (harus Admin)
+- Membuat screenshot untuk laporan
+- Membuat laporan PDF UAS (penjelasan coding)
+
+Output:
+- Semua handler CRUD Students
+- Postman screenshot + laporan PDF
