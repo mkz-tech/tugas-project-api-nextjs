@@ -1,13 +1,14 @@
-## project-api-siakad-zod (Project Sistem Manajemen Akademik – REST API (Next.js + Prisma + PostgreSQL)
-Project ini adalah implementasi UAS mata kuliah Pemrograman API menggunakan:
-- Next.js App Router (API Routes)
-- PostgreSQL
-- Prisma ORM
-- bcrypt untuk hashing password
-- JWT untuk autentikasi
-- Middleware untuk authentication & role-based authorization
-- CRUD Students sebagai entitas utama
-Project ini dapat dijalankan sepenuhnya di localhost menggunakan Node.js + VSCode.
+## project-api-siakad-zod
+(Project Sistem Manajemen Akademik – REST API (Next.js + Prisma + PostgreSQL)
+- Project ini adalah implementasi UAS mata kuliah Pemrograman API menggunakan:
+	- Next.js App Router (API Routes)
+	- PostgreSQL
+	- Prisma ORM
+	- bcrypt untuk hashing password
+	- JWT untuk autentikasi
+	- Middleware untuk authentication & role-based authorization
+	- CRUD Students sebagai entitas utama
+- Project ini dapat dijalankan sepenuhnya di localhost menggunakan Node.js + VSCode.
 
 # Dikerjakan oleh:
 1. Moh. Anwar Musadad - 23104410116
