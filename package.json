@@ -1,5 +1,5 @@
 {
-  "name": "project-api-siakad",
+  "name": "project-api-siakad-zod",
   "version": "1.0.0",
   "private": true,
   "type": "module",

@@ -3,7 +3,7 @@ Backend REST API untuk Sistem Catatan Akademik (Siakad) menggunakan Next.js (App
 
 # Dikerjakan oleh:
 1. Moh. Anwar Musadad - 23104410116
-2. Riza Kumalasari - 23104410112
+2. Muhammad Riza Kumalasari - 23104410112
 3. Miftakul Huda - 23104410099
 4. Mahsunah Ulfah - 25104415001
 
@@ -23,9 +23,31 @@ Backend REST API untuk Sistem Catatan Akademik (Siakad) menggunakan Next.js (App
 4. Jalankan dev server: `npm run dev`
 
 ## Endpoint
-- Public: `/api/auth/register`, `/api/auth/login`
-- Admin only: `/api/users/*`
-- Protected (User/Admin): `/api/items/*` (DELETE hanya Admin)
+- POST /api/auth/register → register (role default: User)
+- POST /api/auth/login → login → get token { token }
+- GET /api/students → get all (Authorization required)
+- POST /api/students → create student (Authorization required)
+- GET /api/students/:id → get by id (Authorization required)
+- PATCH /api/students/:id → update (Authorization required)
+- DELETE /api/students/:id → delete (Admin only)
 
 ## Testing
-Gunakan koleksi pada `postman/project-api-siakad.postman_collection.json`. Set `{{baseUrl}}` dan `{{token}}`.
+`postman_collection.json` > Impor ini ke Postman, ganti `{{baseUrl}}` variable ke `http://localhost:3000`
+Setelah import dan konfigurasi variabel, lakukan pengujian sebagai berikut:
+1. POST /api/auth/register → body name,email,password
+2. POST /api/auth/login → dapat { token }
+3. Inject token di environment {{token}}
+4. POST /api/students → buat student
+5. GET /api/students → harus sukses
+6. GET /api/students/:id → cek by id
+7. PATCH /api/students/:id → update
+8. DELETE /api/students/:id → harus cek role = Admin (jika bukan, 403)
+
+## cara merubah role
+- psql -U postgres -h localhost -p 5432
+- masukkan password PostgreSQL
+- \l
+- \c nama_database (contoh: \c api-siakad)
+- \dt
+- SELECT id, name, email, role FROM "User";
+- UPDATE "User" SET role='Admin' WHERE email='admin1@unisba.com'; (Sesuaikan email)

@@ -1,3 +1,7 @@
+export function ok(message = "Succes", data = {}) {
+  return { success: true, message, data };
+}
 
-export const ok = (message = "Success", data = {}) => ({ success: true, message, data });
-export const err = (error = "Error", code = 500) => ({ success: false, error, code });
+export function err(message = "Error", code = 500, data = {}) {
+  return { success: false, error: message, code, data };
+}

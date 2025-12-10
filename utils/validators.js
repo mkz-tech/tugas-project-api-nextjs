@@ -1,24 +1,17 @@
-
 import { z } from "zod";
 
-export const RegisterSchema = z.object({
-  name: z.string().min(3, { message: "Nama minimal 3 karakter" }),
-  email: z.string().email({ message: "Format email tidak valid" }),
-  password: z.string().min(8, { message: "Password minimal 8 karakter" }),
-  role: z.enum(["Admin", "User"]).optional(),
-});
-
-export const LoginSchema = z.object({
-  email: z.string().email({ message: "Format email tidak valid" }),
-  password: z.string().min(8, { message: "Password minimal 8 karakter" }),
-});
-
 export const StudentCreateSchema = z.object({
-  nim: z.string().min(5, { message: "NIM minimal 5 karakter" }),
+  nim: z.string().min(1, { message: "NIM minimal 1 karakter" }),
   name: z.string().min(3, { message: "Nama minimal 3 karakter" }),
-  program: z.string().min(2, { message: "Program minimal 2 karakter" }),
-  semester: z.number().int().min(1).max(14),
+  program: z.string().min(1, { message: "Program minimal 1 karakter" }),
+  semester: z.number().int().min(1, { message: "Semester minimal 1 karakter" }),
   gpa: z.number().min(0).max(4),
 });
 
-export const StudentUpdateSchema = StudentCreateSchema.partial();
+export const StudentUpdateSchema = z.object({
+  nim: z.string().optional(),
+  name: z.string().optional(),
+  program: z.string().optional(),
+  semester: z.number().int().min(1).optional(),
+  gpa: z.number().min(0).max(4).optional(),
+});
