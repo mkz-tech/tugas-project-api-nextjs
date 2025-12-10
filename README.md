@@ -1,4 +1,4 @@
-## project-api-siakad-zod
+## PROJECT UAS PEMROG-API (project-api-siakad-zod)
 (Project Sistem Manajemen Akademik – REST API (Next.js + Prisma + PostgreSQL)
 - Project ini adalah implementasi UAS mata kuliah Pemrograman API menggunakan:
 	- Next.js App Router (API Routes)
