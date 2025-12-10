@@ -43,7 +43,7 @@ Setelah import dan konfigurasi variabel, lakukan pengujian sebagai berikut:
 7. PATCH /api/students/:id → update
 8. DELETE /api/students/:id → harus cek role = Admin (jika bukan, 403)
 
-## cara merubah role
+## Cara merubah role (dari User ke Admin)
 - psql -U postgres -h localhost -p 5432
 - masukkan password PostgreSQL
 - \l
